@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Vision Video Study</title>
+    <!-- Simple clean styling -->
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.5; }
+        .card { background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 24px; margin-bottom: 20px; }
+        .hidden { display: none; }
+        video { width: 100%; max-width: 800px; border-radius: 6px; background: #000; display: block; margin: 0 auto 20px auto; }
+        .question-block { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+        .options-group { display: flex; gap: 20px; margin-top: 8px; }
+        label { cursor: pointer; display: flex; align-items: center; gap: 6px; }
+        button { background: #0066cc; color: white; border: none; padding: 12px 24px; font-size: 16px; border-radius: 6px; cursor: pointer; }
+        button:hover { background: #0052a3; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
+        .progress { font-weight: bold; color: #666; margin-bottom: 10px; }
+    </style>
+
+    <!-- Firebase SDKs (Compat version for simple static drop-in) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+    <!-- SCREEN 1: WELCOME & IDENTIFICATION -->
+    <div id="screen-intro" class="card">
+        <h2>Video Quality User Study</h2>
+        <p>You will watch a series of short side-by-side videos and answer 2–3 questions for each pair.</p>
+        
+        <div id="prolific-banner" class="hidden">
+            <p><strong>Prolific Worker ID Detected:</strong> <span id="display-prolific-id" style="color:#0066cc;"></span></p>
+        </div>
+
+        <div id="manual-id-group">
+            <label for="user-id-input"><strong>Enter your Name or Participant ID:</strong></label><br>
+            <input type="text" id="user-id-input" placeholder="e.g. John Doe" style="padding: 8px; width: 250px; margin-top: 5px;"><br><br>
+        </div>
+
+        <button id="btn-start" onclick="startStudy()">Start Study</button>
+    </div>
+
+    <!-- SCREEN 2: STUDY TASK -->
+    <div id="screen-study" class="card hidden">
+        <div class="progress">Clip <span id="current-step">1</span> of <span id="total-steps">20</span></div>
+        
+        <!-- Merged Side-by-Side Video -->
+        <video id="video-player" controls autoplay loop mute muted>
+            <source id="video-source" src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <form id="questions-form">
+            <!-- Question 1 -->
+            <div class="question-block">
+                <p><strong>1. Which video appears more realistic?</strong></p>
+                <div class="options-group">
+                    <label><input type="radio" name="q1" value="Left" required> Left Video</label>
+                    <label><input type="radio" name="q1" value="Right"> Right Video</label>
+                    <label><input type="radio" name="q1" value="Same"> Same / Equal</label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-block">
+                <p><strong>2. Which video has better motion smoothness?</strong></p>
+                <div class="options-group">
+                    <label><input type="radio" name="q2" value="Left" required> Left Video</label>
+                    <label><input type="radio" name="q2" value="Right"> Right Video</label>
+                    <label><input type="radio" name="q2" value="Same"> Same / Equal</label>
+                </div>
+            </div>
+
+            <button type="button" id="btn-next" onclick="nextClip()">Next Video</button>
+        </form>
+    </div>
+
+    <!-- SCREEN 3: COMPLETION -->
+    <div id="screen-end" class="card hidden">
+        <h2>Study Complete!</h2>
+        <p>Thank you for participating. Your responses have been saved.</p>
+        <p id="prolific-completion" class="hidden">
+            <strong>Completion Code for Prolific:</strong> 
+            <span style="font-family: monospace; font-size: 18px; background: #eee; padding: 4px 8px;" id="comp-code">C15_SUCCESS_2026</span>
+        </p>
+    </div>
+
+    <script>
+        // ==========================================
+        // 1. FIREBASE CONFIGURATION
+        // Replace this object with your keys from Firebase Console
+        // ==========================================
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT.firebaseapp.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT.appspot.com",
+            messagingSenderId: "123456789",
+            appId: "YOUR_APP_ID"
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // ==========================================
+        // 2. STATE & PARAMS SETUP
+        // ==========================================
+        const urlParams = new URLSearchParams(window.location.search);
+        const prolificID = urlParams.get('PROLIFIC_PID');
+        const studyID = urlParams.get('STUDY_ID');
+        const sessionID = urlParams.get('SESSION_ID');
+
+        let videoPairs = [];
+        let selectedClips = [];
+        let currentIndex = 0;
+        let userResponses = [];
+        let finalParticipantID = "";
+
+        // Detect Prolific User vs Organic User on load
+        window.addEventListener('DOMContentLoaded', () => {
+            if (prolificID) {
+                document.getElementById('prolific-banner').classList.remove('hidden');
+                document.getElementById('display-prolific-id').innerText = prolificID;
+                document.getElementById('manual-id-group').classList.add('hidden');
+                finalParticipantID = prolificID;
+            }
+        });
+
+        // ==========================================
+        // 3. STUDY LOGIC
+        // ==========================================
+        async function startStudy() {
+            if (!prolificID) {
+                const inputVal = document.getElementById('user-id-input').value.trim();
+                if (!inputVal) {
+                    alert("Please enter an ID or Name to continue.");
+                    return;
+                }
+                finalParticipantID = inputVal;
+            }
+
+            // Load list of video pairs from videos.json
+            try {
+                const response = await fetch('videos.json');
+                videoPairs = await response.json();
+            } catch (err) {
+                alert("Error loading video manifest. Check videos.json path.");
+                return;
+            }
+
+            // Shuffle and pick 20 (or max available for POC)
+            const subsetSize = Math.min(20, videoPairs.length);
+            const shuffled = [...videoPairs].sort(() => 0.5 - Math.random());
+            selectedClips = shuffled.slice(0, subsetSize);
+
+            // Switch UI screens
+            document.getElementById('screen-intro').classList.add('hidden');
+            document.getElementById('screen-study').classList.remove('hidden');
+            document.getElementById('total-steps').innerText = selectedClips.length;
+
+            loadClip(0);
+        }
+
+        function loadClip(index) {
+            const clipData = selectedClips[index];
+            document.getElementById('current-step').innerText = index + 1;
+            document.getElementById('questions-form').reset();
+
+            // RANDOMLY DECIDE POSITION: A_B or B_A
+            const isReversed = Math.random() < 0.5;
+            
+            // Firebase Storage URLs (or direct static URLs)
+            const videoUrl = isReversed ? clipData.url_B_A : clipData.url_A_B;
+
+            // Store spatial configuration to map "Left/Right" back to "Model A/Model B" later
+            clipData.currentLayout = {
+                leftModel: isReversed ? clipData.model_B_name : clipData.model_A_name,
+                rightModel: isReversed ? clipData.model_A_name : clipData.model_B_name,
+                fileServed: videoUrl
+            };
+
+            const player = document.getElementById('video-player');
+            const source = document.getElementById('video-source');
+            source.src = videoUrl;
+            player.load();
+            player.play().catch(() => {}); // Auto-play if allowed
+        }
+
+        function nextClip() {
+            const form = document.getElementById('questions-form');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const q1Val = document.querySelector('input[name="q1"]:checked').value;
+            const q2Val = document.querySelector('input[name="q2"]:checked').value;
+
+            const clipData = selectedClips[currentIndex];
+            
+            // Convert "Left/Right" selection to actual Model choice
+            function resolveChoice(selection, layout) {
+                if (selection === "Left") return layout.leftModel;
+                if (selection === "Right") return layout.rightModel;
+                return "Same";
+            }
+
+            // Record response entry
+            userResponses.push({
+                pair_id: clipData.pair_id,
+                file_served: clipData.currentLayout.fileServed,
+                left_was: clipData.currentLayout.leftModel,
+                right_was: clipData.currentLayout.rightModel,
+                q1_raw_choice: q1Val,
+                q1_winning_model: resolveChoice(q1Val, clipData.currentLayout),
+                q2_raw_choice: q2Val,
+                q2_winning_model: resolveChoice(q2Val, clipData.currentLayout),
+                timestamp: new Date().toISOString()
+            });
+
+            currentIndex++;
+
+            if (currentIndex < selectedClips.length) {
+                loadClip(currentIndex);
+            } else {
+                submitAllData();
+            }
+        }
+
+        // ==========================================
+        // 4. SUBMIT TO FIREBASE
+        // ==========================================
+        async function submitAllData() {
+            document.getElementById('btn-next').disabled = true;
+            document.getElementById('btn-next').innerText = "Submitting...";
+
+            const payload = {
+                participant_id: finalParticipantID,
+                is_prolific: !!prolificID,
+                prolific_metadata: {
+                    prolific_pid: prolificID || null,
+                    study_id: studyID || null,
+                    session_id: sessionID || null
+                },
+                total_clips_evaluated: userResponses.length,
+                submitted_at: firebase.firestore.FieldValue.serverTimestamp(),
+                responses: userResponses
+            };
+
+            try {
+                // Save to Firestore collection named 'study_votes'
+                await db.collection("study_votes").add(payload);
+
+                // Show completion screen
+                document.getElementById('screen-study').classList.add('hidden');
+                document.getElementById('screen-end').classList.remove('hidden');
+
+                if (prolificID) {
+                    document.getElementById('prolific-completion').classList.remove('hidden');
+                }
+            } catch (err) {
+                console.error("Firebase submission error:", err);
+                alert("Failed to submit votes. Please check database permissions.");
+                document.getElementById('btn-next').disabled = false;
+                document.getElementById('btn-next').innerText = "Try Again";
+            }
+        }
+    </script>
+</body>
+</html>
