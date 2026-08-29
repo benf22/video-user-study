@@ -3,7 +3,7 @@
     "pair_id": "pair_001",
     "model_A_name": "Model_DiT",
     "model_B_name": "Model_FlowMatch",
-    "url_A_B": "https://firebasestorage.googleapis.com/v0/b/YOUR_PROJECT.appspot.com/o/videos%2Fclip001_A_B.mp4?alt=media",
-    "url_B_A": "https://firebasestorage.googleapis.com/v0/b/YOUR_PROJECT.appspot.com/o/videos%2Fclip001_B_A.mp4?alt=media"
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/beforeafter_strip%20(1).mp4?download=true",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/beforeafter_strip%20(1).mp4?download=true"
   }
 ]
