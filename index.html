@@ -241,6 +241,12 @@ let assignedBlock = null;              // which pre-built block this participant
 // Anonymous participant id — no name is ever collected.
 const participantID = prolificID ||
   ('anon_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 8));
+// One stable id for this run. Progress is saved after every clip as a fresh document
+// (the rules only allow create, never update), each carrying this id + an incrementing
+// seq; analysis keeps the highest-seq snapshot per session, so a participant who quits
+// after a few clips still has those votes saved.
+const SESSION_UID = participantID + '_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+let voteSeq = 0;
 
 // ---------------------------------------------------------------- helpers
 const $ = id => document.getElementById(id);
@@ -396,15 +402,24 @@ function nextClip() {
   userResponses.push(entry);
 
   currentIndex++;
-  if (currentIndex < selectedClips.length) loadClip(currentIndex);
-  else submitAllData();
+  if (currentIndex < selectedClips.length) {
+    // Persist progress so far (best-effort, non-blocking): even if the participant now
+    // closes the tab, the clips they have answered are already saved.
+    saveSnapshot(false).catch(e => console.warn('progress save failed:', e));
+    loadClip(currentIndex);
+  } else {
+    submitAllData();
+  }
 }
 
-async function submitAllData() {
-  const btn = $('btn-next');
-  btn.disabled = true; btn.textContent = 'Submitting…';
-  const payload = {
+// Build the vote document. Written repeatedly (once per clip + once at the end); each write
+// is a fresh create carrying SESSION_UID + an incrementing seq, and `is_final` on the last.
+function votePayload(isFinal) {
+  return {
     participant_id: participantID,
+    session_uid: SESSION_UID,
+    seq: voteSeq,
+    is_final: isFinal,
     is_prolific: !!prolificID,
     prolific_metadata: {prolific_pid: prolificID || null, study_id: studyID || null,
                         session_id: sessionID || null},
@@ -418,8 +433,18 @@ async function submitAllData() {
     submitted_at: firebase.firestore.FieldValue.serverTimestamp(),
     responses: userResponses
   };
+}
+
+async function saveSnapshot(isFinal) {
+  voteSeq++;
+  await db.collection('study_votes').add(votePayload(isFinal));
+}
+
+async function submitAllData() {
+  const btn = $('btn-next');
+  btn.disabled = true; btn.textContent = 'Submitting…';
   try {
-    await db.collection('study_votes').add(payload);
+    await saveSnapshot(true);
     // Mark the block finished. Best effort: the responses are already safe, so a failure
     // here must never look like a failed submission.
     if (assignedBlock) {
