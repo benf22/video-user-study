@@ -324,8 +324,18 @@ function applyLang() {
     const k = el.getAttribute('data-i18n-html'); if (t(k) != null) el.innerHTML = t(k);
   });
 }
+// Translate the comma-separated object list for display. Each object is mapped via
+// objectMap (case-insensitive); anything unmapped falls back to the original English.
+function translateObjects(s) {
+  if (!objectMap || !s) return s;
+  return s.split(',')
+          .map(o => o.trim())
+          .map(o => objectMap[o] || objectMap[o.toLowerCase()] || o)
+          .join(', ');
+}
 
 let videoPairs = [], selectedClips = [], currentIndex = 0, userResponses = [];
+let objectMap = null;   // en->he object names, loaded only for lang=he (display only)
 let clipShownAt = 0;
 let assignedBlock = null;              // which pre-built block this participant got
 // Anonymous participant id — no name is ever collected.
@@ -405,6 +415,8 @@ async function startStudy() {
     videoPairs = await tryJson(`studies/${STUDY}/videos.json`, 'videos.json');
     if (!videoPairs) throw new Error('no manifest');
     blocks = await tryJson(`studies/${STUDY}/blocks_r${ROUND}.json`, 'blocks.json') || [];
+    // Object-name translations (display only; votes keep the English `prompt`).
+    if (LANG !== 'en') objectMap = await tryJson(`studies/${STUDY}/objects_${LANG}.json`);
   } catch (err) {
     btn.disabled = false; btn.textContent = t('begin');
     alert(t('load_error'));
@@ -456,7 +468,7 @@ function loadClip(index) {
 
   const has = !!clip.prompt;
   show('prompt-box', has);
-  if (has) $('prompt-text').textContent = clip.prompt;
+  if (has) $('prompt-text').textContent = translateObjects(clip.prompt);
 
   const v = $('video-player');
   show('spinner', true);
