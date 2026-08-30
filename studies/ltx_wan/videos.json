@@ -898,5 +898,905 @@
     "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltxwan_wan/wan2_049_B_A.mp4",
     "prompt": "potted plant, broccoli, wine glass",
     "target_object": "potted plant, broccoli, wine glass"
+  },
+  {
+    "pair_id": "ltx_000",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_000_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_000_B_A.mp4",
+    "prompt": "broccoli, snowboard, train, elephant",
+    "target_object": "broccoli, snowboard, train, elephant"
+  },
+  {
+    "pair_id": "ltx_001",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_001_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_001_B_A.mp4",
+    "prompt": "wine glass, truck, parking meter, clock, traffic light",
+    "target_object": "wine glass, truck, parking meter, clock, traffic light"
+  },
+  {
+    "pair_id": "ltx_002",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_002_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_002_B_A.mp4",
+    "prompt": "car, motorcycle, fire hydrant",
+    "target_object": "car, motorcycle, fire hydrant"
+  },
+  {
+    "pair_id": "ltx_003",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_003_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_003_B_A.mp4",
+    "prompt": "parking meter, hot dog, tennis racket, kite, bird",
+    "target_object": "parking meter, hot dog, tennis racket, kite, bird"
+  },
+  {
+    "pair_id": "ltx_004",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_004_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_004_B_A.mp4",
+    "prompt": "giraffe, bird",
+    "target_object": "giraffe, bird"
+  },
+  {
+    "pair_id": "ltx_005",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_005_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_005_B_A.mp4",
+    "prompt": "donut, suitcase",
+    "target_object": "donut, suitcase"
+  },
+  {
+    "pair_id": "ltx_006",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_006_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_006_B_A.mp4",
+    "prompt": "sandwich, traffic light, tie, baseball bat, surfboard, suitcase",
+    "target_object": "sandwich, traffic light, tie, baseball bat, surfboard, suitcase"
+  },
+  {
+    "pair_id": "ltx_007",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_007_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_007_B_A.mp4",
+    "prompt": "fire hydrant, stop sign",
+    "target_object": "fire hydrant, stop sign"
+  },
+  {
+    "pair_id": "ltx_008",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_008_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_008_B_A.mp4",
+    "prompt": "pizza, umbrella, apple, surfboard",
+    "target_object": "pizza, umbrella, apple, surfboard"
+  },
+  {
+    "pair_id": "ltx_009",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_009_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_009_B_A.mp4",
+    "prompt": "truck, wine glass, refrigerator, spoon",
+    "target_object": "truck, wine glass, refrigerator, spoon"
+  },
+  {
+    "pair_id": "ltx_010",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_010_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_010_B_A.mp4",
+    "prompt": "carrot, scissors, truck, chair",
+    "target_object": "carrot, scissors, truck, chair"
+  },
+  {
+    "pair_id": "ltx_011",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_011_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_011_B_A.mp4",
+    "prompt": "bottle, chair",
+    "target_object": "bottle, chair"
+  },
+  {
+    "pair_id": "ltx_012",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_012_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_012_B_A.mp4",
+    "prompt": "tie, suitcase",
+    "target_object": "tie, suitcase"
+  },
+  {
+    "pair_id": "ltx_013",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_013_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_013_B_A.mp4",
+    "prompt": "cake, baseball bat, baseball glove, fire hydrant, giraffe, sheep, scissors",
+    "target_object": "cake, baseball bat, baseball glove, fire hydrant, giraffe, sheep, scissors"
+  },
+  {
+    "pair_id": "ltx_014",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_014_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_014_B_A.mp4",
+    "prompt": "remote, zebra, bear",
+    "target_object": "remote, zebra, bear"
+  },
+  {
+    "pair_id": "ltx_015",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_015_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_015_B_A.mp4",
+    "prompt": "car, cat, remote",
+    "target_object": "car, cat, remote"
+  },
+  {
+    "pair_id": "ltx_016",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_016_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_016_B_A.mp4",
+    "prompt": "bowl, remote, laptop, kite, tie",
+    "target_object": "bowl, remote, laptop, kite, tie"
+  },
+  {
+    "pair_id": "ltx_017",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_017_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_017_B_A.mp4",
+    "prompt": "car, microwave, person, bird",
+    "target_object": "car, microwave, person, bird"
+  },
+  {
+    "pair_id": "ltx_018",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_018_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_018_B_A.mp4",
+    "prompt": "parking meter, remote, bottle, hair drier, stop sign, traffic light",
+    "target_object": "parking meter, remote, bottle, hair drier, stop sign, traffic light"
+  },
+  {
+    "pair_id": "ltx_019",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_019_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_019_B_A.mp4",
+    "prompt": "surfboard, tennis racket",
+    "target_object": "surfboard, tennis racket"
+  },
+  {
+    "pair_id": "ltx_020",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_020_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_020_B_A.mp4",
+    "prompt": "hot dog, banana, microwave, fork, baseball glove",
+    "target_object": "hot dog, banana, microwave, fork, baseball glove"
+  },
+  {
+    "pair_id": "ltx_021",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_021_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_021_B_A.mp4",
+    "prompt": "cake, bear, skateboard, refrigerator",
+    "target_object": "cake, bear, skateboard, refrigerator"
+  },
+  {
+    "pair_id": "ltx_022",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_022_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_022_B_A.mp4",
+    "prompt": "broccoli, skis, fork, spoon",
+    "target_object": "broccoli, skis, fork, spoon"
+  },
+  {
+    "pair_id": "ltx_023",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_023_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_023_B_A.mp4",
+    "prompt": "tennis racket, bottle",
+    "target_object": "tennis racket, bottle"
+  },
+  {
+    "pair_id": "ltx_024",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_024_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_024_B_A.mp4",
+    "prompt": "hair drier, carrot, keyboard, skis, dog",
+    "target_object": "hair drier, carrot, keyboard, skis, dog"
+  },
+  {
+    "pair_id": "ltx_025",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_025_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_025_B_A.mp4",
+    "prompt": "skateboard, scissors, bowl",
+    "target_object": "skateboard, scissors, bowl"
+  },
+  {
+    "pair_id": "ltx_026",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_026_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_026_B_A.mp4",
+    "prompt": "refrigerator, elephant, kite",
+    "target_object": "refrigerator, elephant, kite"
+  },
+  {
+    "pair_id": "ltx_027",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_027_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_027_B_A.mp4",
+    "prompt": "truck, bird, cow",
+    "target_object": "truck, bird, cow"
+  },
+  {
+    "pair_id": "ltx_028",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_028_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_028_B_A.mp4",
+    "prompt": "boat, clock, keyboard",
+    "target_object": "boat, clock, keyboard"
+  },
+  {
+    "pair_id": "ltx_029",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_029_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_029_B_A.mp4",
+    "prompt": "parking meter, backpack, handbag, giraffe, apple, toilet",
+    "target_object": "parking meter, backpack, handbag, giraffe, apple, toilet"
+  },
+  {
+    "pair_id": "ltx_030",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_030_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_030_B_A.mp4",
+    "prompt": "cat, dog",
+    "target_object": "cat, dog"
+  },
+  {
+    "pair_id": "ltx_031",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_031_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_031_B_A.mp4",
+    "prompt": "frisbee, skis",
+    "target_object": "frisbee, skis"
+  },
+  {
+    "pair_id": "ltx_032",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_032_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_032_B_A.mp4",
+    "prompt": "bus, scissors, chair, suitcase, cup, cake",
+    "target_object": "bus, scissors, chair, suitcase, cup, cake"
+  },
+  {
+    "pair_id": "ltx_033",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_033_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_033_B_A.mp4",
+    "prompt": "cake, chair, sink, hair drier, cat, carrot, toothbrush",
+    "target_object": "cake, chair, sink, hair drier, cat, carrot, toothbrush"
+  },
+  {
+    "pair_id": "ltx_034",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_034_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_034_B_A.mp4",
+    "prompt": "microwave, frisbee",
+    "target_object": "microwave, frisbee"
+  },
+  {
+    "pair_id": "ltx_035",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_035_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_035_B_A.mp4",
+    "prompt": "toaster, teddy bear",
+    "target_object": "toaster, teddy bear"
+  },
+  {
+    "pair_id": "ltx_036",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_036_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_036_B_A.mp4",
+    "prompt": "cup, zebra, tv, stop sign",
+    "target_object": "cup, zebra, tv, stop sign"
+  },
+  {
+    "pair_id": "ltx_037",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_037_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_037_B_A.mp4",
+    "prompt": "sink, toaster, bottle, skateboard, teddy bear",
+    "target_object": "sink, toaster, bottle, skateboard, teddy bear"
+  },
+  {
+    "pair_id": "ltx_038",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_038_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_038_B_A.mp4",
+    "prompt": "sheep, oven, carrot, orange, couch, knife, sandwich",
+    "target_object": "sheep, oven, carrot, orange, couch, knife, sandwich"
+  },
+  {
+    "pair_id": "ltx_039",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_039_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_039_B_A.mp4",
+    "prompt": "dog, horse",
+    "target_object": "dog, horse"
+  },
+  {
+    "pair_id": "ltx_040",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_040_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_040_B_A.mp4",
+    "prompt": "horse, refrigerator, skis, bear, cat, backpack",
+    "target_object": "horse, refrigerator, skis, bear, cat, backpack"
+  },
+  {
+    "pair_id": "ltx_041",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_041_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_041_B_A.mp4",
+    "prompt": "tie, book, dog, frisbee, fork",
+    "target_object": "tie, book, dog, frisbee, fork"
+  },
+  {
+    "pair_id": "ltx_042",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_042_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_042_B_A.mp4",
+    "prompt": "tv, vase, teddy bear",
+    "target_object": "tv, vase, teddy bear"
+  },
+  {
+    "pair_id": "ltx_043",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_043_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_043_B_A.mp4",
+    "prompt": "hot dog, car, toothbrush, pizza, bird, apple, bottle",
+    "target_object": "hot dog, car, toothbrush, pizza, bird, apple, bottle"
+  },
+  {
+    "pair_id": "ltx_044",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_044_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_044_B_A.mp4",
+    "prompt": "stop sign, toilet, motorcycle",
+    "target_object": "stop sign, toilet, motorcycle"
+  },
+  {
+    "pair_id": "ltx_045",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_045_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_045_B_A.mp4",
+    "prompt": "sheep, pizza, sandwich",
+    "target_object": "sheep, pizza, sandwich"
+  },
+  {
+    "pair_id": "ltx_046",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_046_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_046_B_A.mp4",
+    "prompt": "bear, boat, cow, knife, oven",
+    "target_object": "bear, boat, cow, knife, oven"
+  },
+  {
+    "pair_id": "ltx_047",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_047_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_047_B_A.mp4",
+    "prompt": "hot dog, person, skateboard, scissors, stop sign, apple",
+    "target_object": "hot dog, person, skateboard, scissors, stop sign, apple"
+  },
+  {
+    "pair_id": "ltx_048",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_048_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_048_B_A.mp4",
+    "prompt": "tie, cow, dog, boat",
+    "target_object": "tie, cow, dog, boat"
+  },
+  {
+    "pair_id": "ltx_049",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_049_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_049_B_A.mp4",
+    "prompt": "motorcycle, toilet, spoon, parking meter, knife",
+    "target_object": "motorcycle, toilet, spoon, parking meter, knife"
+  },
+  {
+    "pair_id": "ltx_050",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_050_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_050_B_A.mp4",
+    "prompt": "skateboard, surfboard",
+    "target_object": "skateboard, surfboard"
+  },
+  {
+    "pair_id": "ltx_051",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_051_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_051_B_A.mp4",
+    "prompt": "clock, cat, truck, knife",
+    "target_object": "clock, cat, truck, knife"
+  },
+  {
+    "pair_id": "ltx_052",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_052_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_052_B_A.mp4",
+    "prompt": "cell phone, backpack, couch",
+    "target_object": "cell phone, backpack, couch"
+  },
+  {
+    "pair_id": "ltx_053",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_053_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_053_B_A.mp4",
+    "prompt": "person, vase, toilet, orange",
+    "target_object": "person, vase, toilet, orange"
+  },
+  {
+    "pair_id": "ltx_054",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_054_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_054_B_A.mp4",
+    "prompt": "toaster, boat, teddy bear, clock, carrot, hair drier",
+    "target_object": "toaster, boat, teddy bear, clock, carrot, hair drier"
+  },
+  {
+    "pair_id": "ltx_055",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_055_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_055_B_A.mp4",
+    "prompt": "bowl, remote",
+    "target_object": "bowl, remote"
+  },
+  {
+    "pair_id": "ltx_056",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_056_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_056_B_A.mp4",
+    "prompt": "truck, bicycle",
+    "target_object": "truck, bicycle"
+  },
+  {
+    "pair_id": "ltx_057",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_057_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_057_B_A.mp4",
+    "prompt": "skateboard, broccoli, airplane, toaster, wine glass, book",
+    "target_object": "skateboard, broccoli, airplane, toaster, wine glass, book"
+  },
+  {
+    "pair_id": "ltx_058",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_058_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_058_B_A.mp4",
+    "prompt": "apple, teddy bear, frisbee",
+    "target_object": "apple, teddy bear, frisbee"
+  },
+  {
+    "pair_id": "ltx_059",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_059_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_059_B_A.mp4",
+    "prompt": "cake, giraffe, truck, orange",
+    "target_object": "cake, giraffe, truck, orange"
+  },
+  {
+    "pair_id": "ltx_060",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_060_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_060_B_A.mp4",
+    "prompt": "carrot, laptop, bird, parking meter",
+    "target_object": "carrot, laptop, bird, parking meter"
+  },
+  {
+    "pair_id": "ltx_061",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_061_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_061_B_A.mp4",
+    "prompt": "baseball bat, baseball glove",
+    "target_object": "baseball bat, baseball glove"
+  },
+  {
+    "pair_id": "ltx_062",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_062_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_062_B_A.mp4",
+    "prompt": "bus, teddy bear, pizza, broccoli",
+    "target_object": "bus, teddy bear, pizza, broccoli"
+  },
+  {
+    "pair_id": "ltx_063",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_063_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_063_B_A.mp4",
+    "prompt": "potted plant, remote, suitcase",
+    "target_object": "potted plant, remote, suitcase"
+  },
+  {
+    "pair_id": "ltx_064",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_064_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_064_B_A.mp4",
+    "prompt": "skateboard, vase, toaster",
+    "target_object": "skateboard, vase, toaster"
+  },
+  {
+    "pair_id": "ltx_065",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_065_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_065_B_A.mp4",
+    "prompt": "backpack, umbrella",
+    "target_object": "backpack, umbrella"
+  },
+  {
+    "pair_id": "ltx_066",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_066_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_066_B_A.mp4",
+    "prompt": "horse, sheep",
+    "target_object": "horse, sheep"
+  },
+  {
+    "pair_id": "ltx_067",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_067_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_067_B_A.mp4",
+    "prompt": "cow, bottle, pizza, sandwich",
+    "target_object": "cow, bottle, pizza, sandwich"
+  },
+  {
+    "pair_id": "ltx_068",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_068_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_068_B_A.mp4",
+    "prompt": "orange, carrot, laptop, person, motorcycle",
+    "target_object": "orange, carrot, laptop, person, motorcycle"
+  },
+  {
+    "pair_id": "ltx_069",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_069_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_069_B_A.mp4",
+    "prompt": "bowl, refrigerator, pizza, bicycle, snowboard, cat, surfboard",
+    "target_object": "bowl, refrigerator, pizza, bicycle, snowboard, cat, surfboard"
+  },
+  {
+    "pair_id": "ltx_070",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_070_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_070_B_A.mp4",
+    "prompt": "toothbrush, sink",
+    "target_object": "toothbrush, sink"
+  },
+  {
+    "pair_id": "ltx_071",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_071_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_071_B_A.mp4",
+    "prompt": "dog, tv, boat",
+    "target_object": "dog, tv, boat"
+  },
+  {
+    "pair_id": "ltx_072",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_072_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_072_B_A.mp4",
+    "prompt": "kite, skis, wine glass",
+    "target_object": "kite, skis, wine glass"
+  },
+  {
+    "pair_id": "ltx_073",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_073_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_073_B_A.mp4",
+    "prompt": "cup, motorcycle, chair",
+    "target_object": "cup, motorcycle, chair"
+  },
+  {
+    "pair_id": "ltx_074",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_074_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_074_B_A.mp4",
+    "prompt": "train, tennis racket, bear, hair drier",
+    "target_object": "train, tennis racket, bear, hair drier"
+  },
+  {
+    "pair_id": "ltx_075",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_075_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_075_B_A.mp4",
+    "prompt": "book, tv, fork, cake, stop sign, orange",
+    "target_object": "book, tv, fork, cake, stop sign, orange"
+  },
+  {
+    "pair_id": "ltx_076",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_076_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_076_B_A.mp4",
+    "prompt": "skateboard, person, cow, train, baseball bat, orange, bottle",
+    "target_object": "skateboard, person, cow, train, baseball bat, orange, bottle"
+  },
+  {
+    "pair_id": "ltx_077",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_077_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_077_B_A.mp4",
+    "prompt": "kite, bus, surfboard",
+    "target_object": "kite, bus, surfboard"
+  },
+  {
+    "pair_id": "ltx_078",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_078_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_078_B_A.mp4",
+    "prompt": "handbag, surfboard, sandwich, dog, hot dog, cow, baseball glove",
+    "target_object": "handbag, surfboard, sandwich, dog, hot dog, cow, baseball glove"
+  },
+  {
+    "pair_id": "ltx_079",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_079_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_079_B_A.mp4",
+    "prompt": "clock, pizza, person, scissors",
+    "target_object": "clock, pizza, person, scissors"
+  },
+  {
+    "pair_id": "ltx_080",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_080_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_080_B_A.mp4",
+    "prompt": "scissors, oven, skis, hair drier",
+    "target_object": "scissors, oven, skis, hair drier"
+  },
+  {
+    "pair_id": "ltx_081",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_081_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_081_B_A.mp4",
+    "prompt": "sheep, zebra, person, giraffe",
+    "target_object": "sheep, zebra, person, giraffe"
+  },
+  {
+    "pair_id": "ltx_082",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_082_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_082_B_A.mp4",
+    "prompt": "frisbee, carrot, bus, airplane, tie, tv, cup",
+    "target_object": "frisbee, carrot, bus, airplane, tie, tv, cup"
+  },
+  {
+    "pair_id": "ltx_083",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_083_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_083_B_A.mp4",
+    "prompt": "hair drier, car, giraffe, sheep, bowl, tennis racket",
+    "target_object": "hair drier, car, giraffe, sheep, bowl, tennis racket"
+  },
+  {
+    "pair_id": "ltx_084",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_084_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_084_B_A.mp4",
+    "prompt": "cup, couch",
+    "target_object": "cup, couch"
+  },
+  {
+    "pair_id": "ltx_085",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_085_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_085_B_A.mp4",
+    "prompt": "spoon, laptop",
+    "target_object": "spoon, laptop"
+  },
+  {
+    "pair_id": "ltx_086",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_086_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_086_B_A.mp4",
+    "prompt": "chair, hot dog, cat",
+    "target_object": "chair, hot dog, cat"
+  },
+  {
+    "pair_id": "ltx_087",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_087_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_087_B_A.mp4",
+    "prompt": "handbag, suitcase, person, laptop",
+    "target_object": "handbag, suitcase, person, laptop"
+  },
+  {
+    "pair_id": "ltx_088",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_088_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_088_B_A.mp4",
+    "prompt": "suitcase, carrot, wine glass, cup",
+    "target_object": "suitcase, carrot, wine glass, cup"
+  },
+  {
+    "pair_id": "ltx_089",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_089_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_089_B_A.mp4",
+    "prompt": "microwave, train, remote, wine glass, umbrella, pizza, knife",
+    "target_object": "microwave, train, remote, wine glass, umbrella, pizza, knife"
+  },
+  {
+    "pair_id": "ltx_090",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_090_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_090_B_A.mp4",
+    "prompt": "train, giraffe, stop sign",
+    "target_object": "train, giraffe, stop sign"
+  },
+  {
+    "pair_id": "ltx_091",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_091_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_091_B_A.mp4",
+    "prompt": "wine glass, chair",
+    "target_object": "wine glass, chair"
+  },
+  {
+    "pair_id": "ltx_092",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_092_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_092_B_A.mp4",
+    "prompt": "bicycle, handbag, teddy bear, baseball glove",
+    "target_object": "bicycle, handbag, teddy bear, baseball glove"
+  },
+  {
+    "pair_id": "ltx_093",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_093_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_093_B_A.mp4",
+    "prompt": "person, tie, baseball glove, knife, apple",
+    "target_object": "person, tie, baseball glove, knife, apple"
+  },
+  {
+    "pair_id": "ltx_094",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_094_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_094_B_A.mp4",
+    "prompt": "orange, banana, bottle, boat, baseball glove, toothbrush",
+    "target_object": "orange, banana, bottle, boat, baseball glove, toothbrush"
+  },
+  {
+    "pair_id": "ltx_095",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_095_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_095_B_A.mp4",
+    "prompt": "bottle, snowboard, oven, scissors, fork, dog, frisbee",
+    "target_object": "bottle, snowboard, oven, scissors, fork, dog, frisbee"
+  },
+  {
+    "pair_id": "ltx_096",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_096_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_096_B_A.mp4",
+    "prompt": "oven, scissors",
+    "target_object": "oven, scissors"
+  },
+  {
+    "pair_id": "ltx_097",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_097_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_097_B_A.mp4",
+    "prompt": "bus, keyboard, sandwich",
+    "target_object": "bus, keyboard, sandwich"
+  },
+  {
+    "pair_id": "ltx_098",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_098_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_098_B_A.mp4",
+    "prompt": "snowboard, sports ball, umbrella, cup, truck, book, sheep",
+    "target_object": "snowboard, sports ball, umbrella, cup, truck, book, sheep"
+  },
+  {
+    "pair_id": "ltx_099",
+    "model_A_name": "Attend-and-Excite",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_099_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/ltx_round1/ltx_099_B_A.mp4",
+    "prompt": "bowl, laptop, keyboard",
+    "target_object": "bowl, laptop, keyboard"
   }
 ]
