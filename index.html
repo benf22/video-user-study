@@ -71,10 +71,11 @@
              border-radius:50%; animation:spin .8s linear infinite; display:block}
   @keyframes spin{to{transform:rotate(360deg)}}
 
-  .prompt{margin:16px 0 4px; padding:13px 16px; background:var(--surface); border:1px solid var(--line-soft);
-          border-left:3px solid var(--accent); border-radius:10px; font-size:14.5px; color:var(--text-dim)}
+  .prompt{margin:16px 0 4px; padding:15px 18px; background:var(--surface); border:1px solid var(--line-soft);
+          border-left:3px solid var(--accent); border-radius:10px; font-size:20px; color:var(--text-dim)}
   .prompt b{color:var(--text-faint); font-weight:600; font-size:11px; letter-spacing:.12em;
-            text-transform:uppercase; display:block; margin-bottom:3px}
+            text-transform:uppercase; display:block; margin-bottom:5px}
+  #prompt-text{font-size:20px; font-weight:600; color:var(--text)}
 
   .qs{margin-top:22px; display:grid; gap:14px}
   .q{background:var(--surface); border:1px solid var(--line-soft); border-radius:var(--radius); padding:16px 18px}
@@ -131,7 +132,7 @@
     <div class="steps">
       <div class="step"><div class="n">1</div><p>Each clip is <b>under 4 seconds</b> and loops automatically. Watch both sides at least once.</p></div>
       <div class="step"><div class="n">2</div><p>Answer <b>three quick questions</b> — you can always pick <b>“About the same”</b>.</p></div>
-      <div class="step"><div class="n">3</div><p>The whole thing takes about <b id="eta">3 minutes</b>. Your answers are anonymous.</p></div>
+      <div class="step"><div class="n">3</div><p>The whole thing takes <b id="eta">up to 10 minutes</b>. Your answers are anonymous.</p></div>
     </div>
 
     <button id="btn-start" class="btn" onclick="startStudy()">Begin</button>
@@ -152,15 +153,15 @@
       <div class="spinner" id="spinner"><i></i></div>
     </div>
 
-    <div class="prompt" id="prompt-box"><b>The description both models were given</b><span id="prompt-text"></span></div>
+    <div class="prompt" id="prompt-box"><b>The objects both models asked to generate</b><span id="prompt-text"></span></div>
 
     <form id="questions-form" class="qs" onsubmit="return false">
       <div class="q">
-        <p>1. Which video better matches the description?
-           <span class="hint">Does the right thing show up, and at the right moment?</span></p>
+        <p>1. Which video contains more objects than the list above?
+           <span class="hint">Does the right thing show up?</span></p>
         <div class="opts">
           <label class="opt"><input type="radio" name="q1" value="Left"><span>Left</span></label>
-          <label class="opt"><input type="radio" name="q1" value="Same"><span>About the same</span></label>
+          <label class="opt"><input type="radio" name="q1" value="Same"><span>About the same (try not to use this)</span></label>
           <label class="opt"><input type="radio" name="q1" value="Right"><span>Right</span></label>
         </div>
       </div>
@@ -169,7 +170,7 @@
            <span class="hint">Natural colours and textures, no warping or artefacts.</span></p>
         <div class="opts">
           <label class="opt"><input type="radio" name="q2" value="Left"><span>Left</span></label>
-          <label class="opt"><input type="radio" name="q2" value="Same"><span>About the same</span></label>
+          <label class="opt"><input type="radio" name="q2" value="Same"><span>About the same (try not to use this)</span></label>
           <label class="opt"><input type="radio" name="q2" value="Right"><span>Right</span></label>
         </div>
       </div>
@@ -178,7 +179,7 @@
            <span class="hint">Steady movement, no flicker or jumping between frames.</span></p>
         <div class="opts">
           <label class="opt"><input type="radio" name="q3" value="Left"><span>Left</span></label>
-          <label class="opt"><input type="radio" name="q3" value="Same"><span>About the same</span></label>
+          <label class="opt"><input type="radio" name="q3" value="Same"><span>About the same (try not to use this)</span></label>
           <label class="opt"><input type="radio" name="q3" value="Right"><span>Right</span></label>
         </div>
       </div>
@@ -197,7 +198,7 @@
     <p class="lede">Your responses have been saved. That's everything we needed.</p>
     <div id="prolific-completion" class="hidden">
       <p class="note">Completion code for Prolific</p>
-      <div class="code" id="comp-code">C15_SUCCESS_2026</div>
+      <div class="code" id="comp-code">CIOG2WNB</div>
     </div>
   </section>
 
@@ -423,7 +424,11 @@ async function submitAllData() {
     }
     $('bar-fill').style.width = '100%';
     show('screen-study', false); show('screen-end', true);
-    if (prolificID) show('prolific-completion', true);
+    if (prolificID) {
+      show('prolific-completion', true);
+      setTimeout(() => { window.location.href =
+        'https://app.prolific.com/submissions/complete?cc=CIOG2WNB'; }, 2500);
+    }
   } catch (err) {
     console.error('Firestore submit failed:', err);
     btn.disabled = false; btn.textContent = 'Try again';
