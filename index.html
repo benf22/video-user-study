@@ -228,6 +228,7 @@ const sessionID  = params.get('SESSION_ID');
 
 let videoPairs = [], selectedClips = [], currentIndex = 0, userResponses = [];
 let clipShownAt = 0;
+let assignedBlock = null;              // which pre-built block this participant got
 // Anonymous participant id — no name is ever collected.
 const participantID = prolificID ||
   ('anon_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 8));
@@ -255,19 +256,68 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// ---------------------------------------------------------------- assignment
+// One shared document holds {block_id: {assigned, completed}}.  A transaction hands each
+// participant the least-finished block, so 3 votes per pair fall out by construction
+// instead of by luck.  An abandoned block keeps the lowest `completed`, so the next
+// participant picks it straight back up — no timeouts needed.
+const assignRef = () => db.collection('assignment').doc('state');
+
+async function claimBlock() {
+  return db.runTransaction(async tx => {
+    const ref = assignRef();
+    const snap = await tx.get(ref);
+    if (!snap.exists) throw new Error('assignment/state missing');
+    const st = snap.data();
+    const ids = Object.keys(st).filter(k => !k.startsWith('_'));
+    if (!ids.length) throw new Error('no blocks defined');
+    ids.sort((x, y) => (st[x].completed - st[y].completed) ||
+                       (st[x].assigned  - st[y].assigned)  ||
+                       (x < y ? -1 : 1));
+    tx.update(ref, {[`${ids[0]}.assigned`]: firebase.firestore.FieldValue.increment(1)});
+    return ids[0];
+  });
+}
+
 // ---------------------------------------------------------------- flow
 async function startStudy() {
   const btn = $('btn-start');
   btn.disabled = true; btn.textContent = 'Loading…';
+  let blocks = [];
   try {
-    videoPairs = await (await fetch('videos.json', {cache: 'no-store'})).json();
+    [videoPairs, blocks] = await Promise.all([
+      fetch('videos.json', {cache: 'no-store'}).then(r => r.json()),
+      fetch('blocks.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : []).catch(() => [])
+    ]);
   } catch (err) {
     btn.disabled = false; btn.textContent = 'Begin';
     alert('Could not load the video list. Please refresh and try again.');
     return;
   }
-  selectedClips = [...videoPairs].sort(() => Math.random() - 0.5)
-                                 .slice(0, Math.min(MAX_CLIPS, videoPairs.length));
+
+  // Assigned block if one is available; otherwise a random subset, so a missing or
+  // locked-down assignment document degrades to the old behaviour instead of dead-ending.
+  let chosen = null;
+  if (blocks.length) {
+    try {
+      assignedBlock = await claimBlock();
+      const blk = blocks.find(b => b.block_id === assignedBlock);
+      if (blk) {
+        const byId = Object.fromEntries(videoPairs.map(p => [p.pair_id, p]));
+        chosen = blk.pair_ids.map(id => byId[id]).filter(Boolean);
+      }
+    } catch (err) {
+      console.warn('block assignment unavailable — using a random subset:', err.message);
+      assignedBlock = null;
+    }
+  }
+  if (!chosen || !chosen.length) {
+    chosen = [...videoPairs].sort(() => Math.random() - 0.5)
+                            .slice(0, Math.min(MAX_CLIPS, videoPairs.length));
+  }
+  // Shuffle presentation order even inside a block, so the participants who share a block
+  // do not all meet the clips in the same sequence.
+  selectedClips = [...chosen].sort(() => Math.random() - 0.5);
   $('total-steps').textContent = selectedClips.length;
   show('screen-intro', false); show('screen-study', true);
   loadClip(0);
@@ -341,12 +391,20 @@ async function submitAllData() {
                         session_id: sessionID || null},
     total_clips_evaluated: userResponses.length,
     n_questions: QUESTIONS.length,
+    block_id: assignedBlock,
     user_agent: navigator.userAgent,
     submitted_at: firebase.firestore.FieldValue.serverTimestamp(),
     responses: userResponses
   };
   try {
     await db.collection('study_votes').add(payload);
+    // Mark the block finished. Best effort: the responses are already safe, so a failure
+    // here must never look like a failed submission.
+    if (assignedBlock) {
+      assignRef().update({[`${assignedBlock}.completed`]:
+                          firebase.firestore.FieldValue.increment(1)})
+                 .catch(e => console.warn('completed counter not incremented:', e));
+    }
     $('bar-fill').style.width = '100%';
     show('screen-study', false); show('screen-end', true);
     if (prolificID) show('prolific-completion', true);

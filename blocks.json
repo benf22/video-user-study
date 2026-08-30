@@ -1,0 +1,32 @@
+[
+  {
+    "block_id": "block_00",
+    "pair_ids": [
+      "pair_003",
+      "pair_005",
+      "pair_004",
+      "pair_002",
+      "pair_001"
+    ]
+  },
+  {
+    "block_id": "block_01",
+    "pair_ids": [
+      "pair_005",
+      "pair_002",
+      "pair_004",
+      "pair_003",
+      "pair_001"
+    ]
+  },
+  {
+    "block_id": "block_02",
+    "pair_ids": [
+      "pair_005",
+      "pair_003",
+      "pair_004",
+      "pair_002",
+      "pair_001"
+    ]
+  }
+]
