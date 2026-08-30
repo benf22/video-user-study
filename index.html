@@ -81,7 +81,7 @@
   .q{background:var(--surface); border:1px solid var(--line-soft); border-radius:var(--radius); padding:16px 18px}
   .q > p{margin:0 0 12px; font-size:15px; font-weight:600}
   .q .hint{display:block; font-weight:400; font-size:13px; color:var(--text-faint); margin-top:3px}
-  .opts{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+  .opts{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; direction:ltr}
   .opt{position:relative}
   .opt input{position:absolute; opacity:0; pointer-events:none}
   .opt span{display:block; text-align:center; padding:11px 8px; font-size:14px; font-weight:500;
@@ -120,84 +120,84 @@
 
   <!-- ============ SCREEN 1 : INTRO ============ -->
   <section id="screen-intro" class="intro">
-    <div class="eyebrow">Research study</div>
-    <h1>Compare two AI-generated videos</h1>
-    <p class="lede">You'll see short video clips side by side. Two AI models generated each
+    <div class="eyebrow" data-i18n="eyebrow">Research study</div>
+    <h1 data-i18n="intro_h1">Compare two AI-generated videos</h1>
+    <p class="lede" data-i18n="intro_lede">You'll see short video clips side by side. Two AI models generated each
        pair from the same list of objects. Tell us which side did the better job.</p>
 
     <div id="prolific-banner" class="pill hidden"><span class="dot"></span>
-      Prolific worker <b style="color:var(--text);margin-left:2px" id="display-prolific-id"></b>
+      <span data-i18n="prolific_worker">Prolific worker</span> <b style="color:var(--text);margin-left:2px" id="display-prolific-id"></b>
     </div>
 
     <div class="steps">
-      <div class="step"><div class="n">1</div><p>Each clip is <b>under 4 seconds</b> and loops automatically. Watch both sides at least once.</p></div>
-      <div class="step"><div class="n">2</div><p>Answer <b>three quick questions</b> per clip. Pick a side whenever you can — only choose <b>“About the same”</b> if you genuinely can't tell them apart.</p></div>
-      <div class="step"><div class="n">3</div><p>The study takes about <b id="eta">10 minutes</b>. Your answers are anonymous.</p></div>
+      <div class="step"><div class="n">1</div><p data-i18n-html="step1">Each clip is <b>under 4 seconds</b> and loops automatically. Watch both sides at least once.</p></div>
+      <div class="step"><div class="n">2</div><p data-i18n-html="step2">Answer <b>three quick questions</b> per clip. Pick a side whenever you can — only choose <b>“About the same”</b> if you genuinely can't tell them apart.</p></div>
+      <div class="step"><div class="n">3</div><p data-i18n-html="step3">The study takes about <b id="eta">10 minutes</b>. Your answers are anonymous.</p></div>
     </div>
 
-    <button id="btn-start" class="btn" onclick="startStudy()">Begin</button>
-    <p class="note" style="margin-top:18px">No sound needed — the clips are silent.</p>
+    <button id="btn-start" class="btn" onclick="startStudy()" data-i18n="begin">Begin</button>
+    <p class="note" style="margin-top:18px" data-i18n="no_sound">No sound needed — the clips are silent.</p>
   </section>
 
   <!-- ============ SCREEN 2 : STUDY ============ -->
   <section id="screen-study" class="hidden">
     <div class="topbar">
-      <div class="counter">Clip <b id="current-step">1</b> of <b id="total-steps">5</b></div>
-      <div class="note">Left and right are randomised on every clip.</div>
+      <div class="counter"><span data-i18n="clip_word">Clip</span> <b id="current-step">1</b> <span data-i18n="of_word">of</span> <b id="total-steps">5</b></div>
+      <div class="note" data-i18n="randomised_note">Left and right are randomised on every clip.</div>
     </div>
     <div class="bar"><i id="bar-fill"></i></div>
 
     <div class="stage">
       <video id="video-player" autoplay loop muted playsinline preload="auto"></video>
-      <div class="tags"><span class="tag">Left</span><span class="tag">Right</span></div>
+      <div class="tags" dir="ltr"><span class="tag" data-i18n="left">Left</span><span class="tag" data-i18n="right">Right</span></div>
       <div class="spinner" id="spinner"><i></i></div>
     </div>
 
-    <div class="prompt" id="prompt-box"><b>The objects both models were asked to generate</b><span id="prompt-text"></span></div>
+    <div class="prompt" id="prompt-box"><b data-i18n="prompt_label">The objects both models were asked to generate</b><span id="prompt-text"></span></div>
 
     <form id="questions-form" class="qs" onsubmit="return false">
       <div class="q">
-        <p>1. Which video shows more of the objects listed above?
-           <span class="hint">How many of the listed objects can you actually see?</span></p>
+        <p><span data-i18n="q1">1. Which video shows more of the objects listed above?</span>
+           <span class="hint" data-i18n="q1_hint">How many of the listed objects can you actually see?</span></p>
         <div class="opts">
-          <label class="opt"><input type="radio" name="q1" value="Left"><span>Left</span></label>
-          <label class="opt"><input type="radio" name="q1" value="Same"><span>About the same</span></label>
-          <label class="opt"><input type="radio" name="q1" value="Right"><span>Right</span></label>
+          <label class="opt"><input type="radio" name="q1" value="Left"><span data-i18n="left">Left</span></label>
+          <label class="opt"><input type="radio" name="q1" value="Same"><span data-i18n="same">About the same</span></label>
+          <label class="opt"><input type="radio" name="q1" value="Right"><span data-i18n="right">Right</span></label>
         </div>
       </div>
       <div class="q">
-        <p>2. Which video looks more realistic?
-           <span class="hint">Natural colours and textures, no warping or artefacts.</span></p>
+        <p><span data-i18n="q2">2. Which video looks more realistic?</span>
+           <span class="hint" data-i18n="q2_hint">Natural colours and textures, no warping or artefacts.</span></p>
         <div class="opts">
-          <label class="opt"><input type="radio" name="q2" value="Left"><span>Left</span></label>
-          <label class="opt"><input type="radio" name="q2" value="Same"><span>About the same</span></label>
-          <label class="opt"><input type="radio" name="q2" value="Right"><span>Right</span></label>
+          <label class="opt"><input type="radio" name="q2" value="Left"><span data-i18n="left">Left</span></label>
+          <label class="opt"><input type="radio" name="q2" value="Same"><span data-i18n="same">About the same</span></label>
+          <label class="opt"><input type="radio" name="q2" value="Right"><span data-i18n="right">Right</span></label>
         </div>
       </div>
       <div class="q">
-        <p>3. Which video has smoother motion?
-           <span class="hint">Steady movement, no flicker or jumping between frames.</span></p>
+        <p><span data-i18n="q3">3. Which video has smoother motion?</span>
+           <span class="hint" data-i18n="q3_hint">Steady movement, no flicker or jumping between frames.</span></p>
         <div class="opts">
-          <label class="opt"><input type="radio" name="q3" value="Left"><span>Left</span></label>
-          <label class="opt"><input type="radio" name="q3" value="Same"><span>About the same</span></label>
-          <label class="opt"><input type="radio" name="q3" value="Right"><span>Right</span></label>
+          <label class="opt"><input type="radio" name="q3" value="Left"><span data-i18n="left">Left</span></label>
+          <label class="opt"><input type="radio" name="q3" value="Same"><span data-i18n="same">About the same</span></label>
+          <label class="opt"><input type="radio" name="q3" value="Right"><span data-i18n="right">Right</span></label>
         </div>
       </div>
     </form>
 
     <div class="actions">
-      <span class="note" id="hint-text">Answer all three to continue.</span>
-      <button id="btn-next" class="btn" disabled onclick="nextClip()">Next clip</button>
+      <span class="note" id="hint-text" data-i18n="answer_all">Answer all three to continue.</span>
+      <button id="btn-next" class="btn" disabled onclick="nextClip()" data-i18n="next_clip">Next clip</button>
     </div>
   </section>
 
   <!-- ============ SCREEN 3 : DONE ============ -->
   <section id="screen-end" class="done hidden">
     <div class="check">✓</div>
-    <h1 style="font-size:27px">Thank you</h1>
-    <p class="lede">Your responses have been saved. That's everything we needed.</p>
+    <h1 style="font-size:27px" data-i18n="thanks_h1">Thank you</h1>
+    <p class="lede" data-i18n="thanks_lede">Your responses have been saved. That's everything we needed.</p>
     <div id="prolific-completion" class="hidden">
-      <p class="note">Completion code for Prolific</p>
+      <p class="note" data-i18n="completion_code">Completion code for Prolific</p>
       <div class="code" id="comp-code">CIOG2WNB</div>
     </div>
   </section>
@@ -234,6 +234,96 @@ const GROUP = (params.get('group') || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0
 const prolificID = params.get('PROLIFIC_PID');
 const studyID    = params.get('STUDY_ID');
 const sessionID  = params.get('SESSION_ID');
+// UI language. Same study/round/clips/counters — only the text changes, so English and
+// Hebrew links (…&lang=he) pour into one shared pool. Recorded on every vote.
+const LANG = (params.get('lang') || 'en').toLowerCase().replace(/[^a-z]/g, '').slice(0, 5) || 'en';
+
+const I18N = {
+  en: {
+    title: "Video Comparison Study",
+    eyebrow: "Research study",
+    intro_h1: "Compare two AI-generated videos",
+    intro_lede: "You'll see short video clips side by side. Two AI models generated each pair from the same list of objects. Tell us which side did the better job.",
+    prolific_worker: "Prolific worker",
+    step1: "Each clip is <b>under 4 seconds</b> and loops automatically. Watch both sides at least once.",
+    step2: "Answer <b>three quick questions</b> per clip. Pick a side whenever you can — only choose <b>“About the same”</b> if you genuinely can't tell them apart.",
+    step3: 'The study takes about <b id="eta">10 minutes</b>. Your answers are anonymous.',
+    begin: "Begin",
+    no_sound: "No sound needed — the clips are silent.",
+    clip_word: "Clip",
+    of_word: "of",
+    randomised_note: "Left and right are randomised on every clip.",
+    left: "Left",
+    right: "Right",
+    same: "About the same",
+    prompt_label: "The objects both models were asked to generate",
+    q1: "1. Which video shows more of the objects listed above?",
+    q1_hint: "How many of the listed objects can you actually see?",
+    q2: "2. Which video looks more realistic?",
+    q2_hint: "Natural colours and textures, no warping or artefacts.",
+    q3: "3. Which video has smoother motion?",
+    q3_hint: "Steady movement, no flicker or jumping between frames.",
+    answer_all: "Answer all three to continue.",
+    next_clip: "Next clip",
+    loading: "Loading…",
+    submitting: "Submitting…",
+    try_again: "Try again",
+    load_error: "Could not load the video list. Please refresh and try again.",
+    save_error: "Could not save your answers. Please try again.",
+    thanks_h1: "Thank you",
+    thanks_lede: "Your responses have been saved. That's everything we needed.",
+    completion_code: "Completion code for Prolific",
+  },
+  he: {
+    title: "מחקר השוואת סרטונים",
+    eyebrow: "מחקר",
+    intro_h1: "השוואה בין שני סרטונים שנוצרו בבינה מלאכותית",
+    intro_lede: "תוצג בפניכם סדרה של קטעי וידאו קצרים זה לצד זה. שני מודלים של בינה מלאכותית יצרו כל זוג מאותה רשימת אובייקטים. ספרו לנו איזה צד עשה עבודה טובה יותר.",
+    prolific_worker: "משתתף/ת Prolific",
+    step1: "כל קטע נמשך <b>פחות מ-4 שניות</b> ורץ בלולאה אוטומטית. צפו בשני הצדדים לפחות פעם אחת.",
+    step2: "ענו על <b>שלוש שאלות קצרות</b> לכל קטע. בחרו צד בכל פעם שאפשר — בחרו <b>„בערך אותו דבר”</b> רק אם באמת אי אפשר להבחין ביניהם.",
+    step3: 'המחקר אורך כ-<b id="eta">10 דקות</b>. התשובות שלכם אנונימיות.',
+    begin: "התחלה",
+    no_sound: "אין צורך בקול — הקטעים שקטים.",
+    clip_word: "קטע",
+    of_word: "מתוך",
+    randomised_note: "צד ימין וצד שמאל מתחלפים באקראי בכל קטע.",
+    left: "שמאל",
+    right: "ימין",
+    same: "בערך אותו דבר",
+    prompt_label: "האובייקטים ששני המודלים התבקשו לייצר",
+    q1: "1. באיזה סרטון מופיעים יותר מהאובייקטים שברשימה למעלה?",
+    q1_hint: "כמה מהאובייקטים שברשימה אתם באמת רואים?",
+    q2: "2. איזה סרטון נראה מציאותי יותר?",
+    q2_hint: "צבעים ומרקמים טבעיים, ללא עיוותים או שיבושים.",
+    q3: "3. באיזה סרטון התנועה חלקה יותר?",
+    q3_hint: "תנועה יציבה, ללא הבהובים או קפיצות בין הפריימים.",
+    answer_all: "ענו על כל שלוש השאלות כדי להמשיך.",
+    next_clip: "הקטע הבא",
+    loading: "טוען…",
+    submitting: "שולח…",
+    try_again: "נסו שוב",
+    load_error: "לא ניתן לטעון את רשימת הסרטונים. רעננו את הדף ונסו שוב.",
+    save_error: "לא ניתן לשמור את התשובות. נסו שוב.",
+    thanks_h1: "תודה רבה",
+    thanks_lede: "התשובות שלכם נשמרו. זה כל מה שהיינו צריכים.",
+    completion_code: "קוד השלמה עבור Prolific",
+  },
+};
+function t(key) {
+  const d = I18N[LANG] || I18N.en;
+  return d[key] != null ? d[key] : I18N.en[key];
+}
+function applyLang() {
+  if (LANG === 'he') { document.documentElement.dir = 'rtl'; document.documentElement.lang = 'he'; }
+  document.title = t('title');
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n'); if (t(k) != null) el.textContent = t(k);
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const k = el.getAttribute('data-i18n-html'); if (t(k) != null) el.innerHTML = t(k);
+  });
+}
 
 let videoPairs = [], selectedClips = [], currentIndex = 0, userResponses = [];
 let clipShownAt = 0;
@@ -258,10 +348,11 @@ function answered() {
 function refreshNext() {
   const ok = answered();
   $('btn-next').disabled = !ok;
-  $('hint-text').textContent = ok ? '' : 'Answer all three to continue.';
+  $('hint-text').textContent = ok ? '' : t('answer_all');
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+  applyLang();
   if (prolificID) {
     show('prolific-banner', true);
     $('display-prolific-id').textContent = prolificID;
@@ -297,7 +388,7 @@ async function claimBlock() {
 // ---------------------------------------------------------------- flow
 async function startStudy() {
   const btn = $('btn-start');
-  btn.disabled = true; btn.textContent = 'Loading…';
+  btn.disabled = true; btn.textContent = t('loading');
   // Namespaced paths first; the flat ones remain as a fallback for older links.
   const tryJson = async (...paths) => {
     for (const path of paths) {
@@ -315,8 +406,8 @@ async function startStudy() {
     if (!videoPairs) throw new Error('no manifest');
     blocks = await tryJson(`studies/${STUDY}/blocks_r${ROUND}.json`, 'blocks.json') || [];
   } catch (err) {
-    btn.disabled = false; btn.textContent = 'Begin';
-    alert('Could not load the video list. Please refresh and try again.');
+    btn.disabled = false; btn.textContent = t('begin');
+    alert(t('load_error'));
     return;
   }
 
@@ -426,6 +517,7 @@ function votePayload(isFinal) {
     study_id: STUDY,
     round: ROUND,
     group: GROUP,
+    lang: LANG,
     total_clips_evaluated: userResponses.length,
     n_questions: QUESTIONS.length,
     block_id: assignedBlock,
@@ -442,7 +534,7 @@ async function saveSnapshot(isFinal) {
 
 async function submitAllData() {
   const btn = $('btn-next');
-  btn.disabled = true; btn.textContent = 'Submitting…';
+  btn.disabled = true; btn.textContent = t('submitting');
   try {
     await saveSnapshot(true);
     // Mark the block finished. Best effort: the responses are already safe, so a failure
@@ -461,8 +553,8 @@ async function submitAllData() {
     }
   } catch (err) {
     console.error('Firestore submit failed:', err);
-    btn.disabled = false; btn.textContent = 'Try again';
-    $('hint-text').innerHTML = '<span class="err">Could not save your answers. Please try again.</span>';
+    btn.disabled = false; btn.textContent = t('try_again');
+    $('hint-text').innerHTML = '<span class="err">' + t('save_error') + '</span>';
   }
 }
 </script>
