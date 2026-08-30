@@ -222,6 +222,10 @@ const QUESTIONS = ["q1", "q2", "q3"];
 
 // ---------------------------------------------------------------- state
 const params    = new URLSearchParams(location.search);
+// A study is a namespace: its own clip pool, its own blocks, its own counters. A round is
+// a re-run of the same pool under a different partition. Both default so a bare link works.
+const STUDY = (params.get('study') || 'main').replace(/[^A-Za-z0-9_-]/g, '');
+const ROUND = parseInt(params.get('round') || '1', 10) || 1;
 const prolificID = params.get('PROLIFIC_PID');
 const studyID    = params.get('STUDY_ID');
 const sessionID  = params.get('SESSION_ID');
@@ -261,7 +265,7 @@ window.addEventListener('DOMContentLoaded', () => {
 // participant the least-finished block, so 3 votes per pair fall out by construction
 // instead of by luck.  An abandoned block keeps the lowest `completed`, so the next
 // participant picks it straight back up — no timeouts needed.
-const assignRef = () => db.collection('assignment').doc('state');
+const assignRef = () => db.collection('assignment').doc(`${STUDY}__r${ROUND}`);
 
 async function claimBlock() {
   return db.runTransaction(async tx => {
@@ -283,12 +287,22 @@ async function claimBlock() {
 async function startStudy() {
   const btn = $('btn-start');
   btn.disabled = true; btn.textContent = 'Loading…';
+  // Namespaced paths first; the flat ones remain as a fallback for older links.
+  const tryJson = async (...paths) => {
+    for (const path of paths) {
+      try {
+        const r = await fetch(path, {cache: 'no-store'});
+        if (r.ok) return await r.json();
+      } catch (e) { /* try the next path */ }
+    }
+    return null;
+  };
+
   let blocks = [];
   try {
-    [videoPairs, blocks] = await Promise.all([
-      fetch('videos.json', {cache: 'no-store'}).then(r => r.json()),
-      fetch('blocks.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : []).catch(() => [])
-    ]);
+    videoPairs = await tryJson(`studies/${STUDY}/videos.json`, 'videos.json');
+    if (!videoPairs) throw new Error('no manifest');
+    blocks = await tryJson(`studies/${STUDY}/blocks_r${ROUND}.json`, 'blocks.json') || [];
   } catch (err) {
     btn.disabled = false; btn.textContent = 'Begin';
     alert('Could not load the video list. Please refresh and try again.');
@@ -389,6 +403,8 @@ async function submitAllData() {
     is_prolific: !!prolificID,
     prolific_metadata: {prolific_pid: prolificID || null, study_id: studyID || null,
                         session_id: sessionID || null},
+    study_id: STUDY,
+    round: ROUND,
     total_clips_evaluated: userResponses.length,
     n_questions: QUESTIONS.length,
     block_id: assignedBlock,

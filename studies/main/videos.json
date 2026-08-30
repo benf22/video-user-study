@@ -1,0 +1,47 @@
+[
+  {
+    "pair_id": "pair_001",
+    "model_A_name": "TempoControl",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/pair_001_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/pair_001_B_A.mp4",
+    "prompt": "The video begins with a serene view centered on the handbag, with no sign of the umbrella. In the second half, the umbrella unexpectedly appears, altering the dynamic of the scene.",
+    "target_object": "umbrella"
+  },
+  {
+    "pair_id": "pair_002",
+    "model_A_name": "TempoControl",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/pair_002_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/pair_002_B_A.mp4",
+    "prompt": "A video of an empty scene. Suddenly, during the second second of the video, a horse appears out of nowhere, drawing all attention.",
+    "target_object": "horse"
+  },
+  {
+    "pair_id": "pair_003",
+    "model_A_name": "TempoControl",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/pair_003_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/pair_003_B_A.mp4",
+    "prompt": "A video of an empty scene. Suddenly, during the second second of the video, a fire hydrant appears out of nowhere, drawing all attention.",
+    "target_object": "fire hydrant"
+  },
+  {
+    "pair_id": "pair_004",
+    "model_A_name": "TempoControl",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/pair_004_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/pair_004_B_A.mp4",
+    "prompt": "The video begins with a serene view centered on the person, with no sign of the toothbrush. In the second half, the toothbrush unexpectedly appears, altering the dynamic of the scene.",
+    "target_object": "toothbrush"
+  },
+  {
+    "pair_id": "pair_005",
+    "model_A_name": "TempoControl",
+    "model_B_name": "Ours",
+    "url_A_B": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/pair_005_A_B.mp4",
+    "url_B_A": "https://huggingface.co/datasets/benf22/attnSteer/resolve/main/pair_005_B_A.mp4",
+    "prompt": "The video begins with a serene view centered on the car, with no sign of the motorcycle. In the second half, the motorcycle unexpectedly appears, altering the dynamic of the scene.",
+    "target_object": "motorcycle"
+  }
+]
