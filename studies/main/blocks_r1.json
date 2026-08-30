@@ -3,30 +3,63 @@
     "block_id": "block_00",
     "pair_ids": [
       "pair_003",
-      "pair_001",
-      "pair_002",
-      "pair_004",
-      "pair_005"
+      "pair_001"
     ]
   },
   {
     "block_id": "block_01",
     "pair_ids": [
-      "pair_003",
       "pair_002",
-      "pair_001",
-      "pair_005",
       "pair_004"
     ]
   },
   {
     "block_id": "block_02",
     "pair_ids": [
-      "pair_002",
-      "pair_004",
       "pair_005",
-      "pair_001",
       "pair_003"
+    ]
+  },
+  {
+    "block_id": "block_03",
+    "pair_ids": [
+      "pair_003",
+      "pair_002"
+    ]
+  },
+  {
+    "block_id": "block_04",
+    "pair_ids": [
+      "pair_001",
+      "pair_005"
+    ]
+  },
+  {
+    "block_id": "block_05",
+    "pair_ids": [
+      "pair_004",
+      "pair_003"
+    ]
+  },
+  {
+    "block_id": "block_06",
+    "pair_ids": [
+      "pair_002",
+      "pair_004"
+    ]
+  },
+  {
+    "block_id": "block_07",
+    "pair_ids": [
+      "pair_005",
+      "pair_001"
+    ]
+  },
+  {
+    "block_id": "block_08",
+    "pair_ids": [
+      "pair_003",
+      "pair_002"
     ]
   }
 ]
