@@ -227,6 +227,10 @@ const params    = new URLSearchParams(location.search);
 // a re-run of the same pool under a different partition. Both default so a bare link works.
 const STUDY = (params.get('study') || 'main').replace(/[^A-Za-z0-9_-]/g, '');
 const ROUND = parseInt(params.get('round') || '1', 10) || 1;
+// Free-text audience label (prolific / lab / twitter ...). Purely a tag: it does NOT
+// affect block assignment, so every group draws from the same shared pool of blocks.
+const GROUP = (params.get('group') || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 32)
+              || (params.get('PROLIFIC_PID') ? 'prolific' : 'unlabelled');
 const prolificID = params.get('PROLIFIC_PID');
 const studyID    = params.get('STUDY_ID');
 const sessionID  = params.get('SESSION_ID');
@@ -406,6 +410,7 @@ async function submitAllData() {
                         session_id: sessionID || null},
     study_id: STUDY,
     round: ROUND,
+    group: GROUP,
     total_clips_evaluated: userResponses.length,
     n_questions: QUESTIONS.length,
     block_id: assignedBlock,
