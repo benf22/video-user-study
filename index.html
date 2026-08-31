@@ -385,8 +385,10 @@ async function claimBlock() {
     const snap = await tx.get(ref);
     if (!snap.exists) throw new Error('assignment/state missing');
     const st = snap.data();
-    const ids = Object.keys(st).filter(k => !k.startsWith('_'));
-    if (!ids.length) throw new Error('no blocks defined');
+    // a retired block is finished content: never hand it out again, even though its
+    // completed count would otherwise put it back at the front of the queue
+    const ids = Object.keys(st).filter(k => !k.startsWith('_') && !st[k].retired);
+    if (!ids.length) throw new Error('no blocks available');
     ids.sort((x, y) => (st[x].completed - st[y].completed) ||
                        (st[x].assigned  - st[y].assigned)  ||
                        (x < y ? -1 : 1));
